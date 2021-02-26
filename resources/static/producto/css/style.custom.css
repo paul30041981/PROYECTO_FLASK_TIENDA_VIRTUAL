@@ -1,0 +1,19 @@
+.list-product .odd{
+  background: #CCC;
+}
+
+.list-product .even{
+  background: #f2e0e0;
+}
+
+.jumbotron {
+  padding: 4rem 2rem;
+  margin-bottom: 1rem;
+  background-color: var(--bs-light);
+  border-radius: .3rem;
+}
+
+/*
+.list-product .jumbotron:nth-child(odd){
+  background: #CCC;
+}*/

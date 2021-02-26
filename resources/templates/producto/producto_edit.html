@@ -1,0 +1,23 @@
+{% extends "general/layout/layout.html" %}
+
+{% block body %}
+
+<div class="container-fluid" style="justify-content: center; display: flex;">
+  <div class="card text-left border-dark" style="width: 36rem;">
+    <div class="card-header text-white bg-dark">
+      <h5>Actualizar Producto</h5>
+    </div>
+    <div class="card-body">
+      <h3 class="text-center mb-4 text-primary"><i class="fa fa-box fa-3x"></i></h3>
+      <form action="{{ url_for('producto_update', id=prod.id) }}" method="POST">
+          {% include 'producto/fragment/_form_producto.html'%}
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-dark me-md-2">Actualizar</button>
+            <a class="btn btn-dark me-md-2" href="{{ url_for('productos') }}">Volver</a>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

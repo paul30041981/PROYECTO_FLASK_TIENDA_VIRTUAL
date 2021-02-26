@@ -1,0 +1,53 @@
+{% extends "general/layout/layout.html" %}
+{% from 'producto/macro/_pagination.html' import m_pagination %}
+
+{% block body %}
+  <br/>
+  <table class="table table-dark caption-top">
+    <caption>
+      <h3 class="text-center mb-4 text-primary"><i class="fas fa-file-invoice-dollar fa-4x"></i></h3>
+      <h4>Lista de Compras Realizadas</h4>
+      <br/>
+    </caption>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nro.Factura</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Fecha de Creacion</th>
+        <th scope="col">Monto Total</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for factura in facturas.items %}
+      <tr class="{{ loop.cycle('table-light', 'table-secondary') }}">
+        <th scope="row">{{ loop.index + (facturas.page - 1) * 5 }}</th>
+        <td>{{ factura.id }}</td>
+        <td>{{ factura.user.username }}</td>
+        <td>{{ factura.fecha_creacion.strftime('%d-%m-%Y %H:%M:%S') }}</td>
+        <td>{{ factura.monto_total }}</td>
+        <td>
+        
+          <button class="btn btn-outline-danger btn-sm" 
+            data-bs-toggle="modal" 
+            data-bs-target="#detalleModal"
+            data-id="{{factura['id']}}"
+            data-bs-toggle="tooltip" 
+            data-bs-placement="top" 
+            title="Ver">
+            <i class="fa fa-glasses"></i>
+          </button>
+      
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {{ m_pagination(facturas) }}
+
+  {% include 'factura/fragment/_modal_factura_detalle.html'%}
+
+  <script src="{{ url_for('static', filename='producto/js/detalle_factura.min.js') }}"></script>
+    
+{% endblock %}

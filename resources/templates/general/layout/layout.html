@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Almacen de Paul</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='producto/css/style.custom.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='global/css/style.custom.css') }}">
+</head>
+<body>
+	
+	
+	{% include 'general/fragment/_nav.html'%}
+  
+	<br/>
+
+	<div class="container">
+		{% include 'general/fragment/_alert.html'%}
+		{% block body %}
+		{% endblock %}
+	</div>
+	
+	<br/>
+	<br/>
+	<br/>
+
+	{% include 'general/fragment/_footer.html'%}
+	<script src="{{ url_for('static',filename='global/js/jquery-3.4.1.slim.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='global/js/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>

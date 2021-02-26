@@ -1,0 +1,21 @@
+    <!-- Modal Editar-->
+    <div class="modal fade" style="padding-top: 40px;"  id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header text-white bg-dark">
+            <h5 class="modal-title" id="productoModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="editForm" action="#" method="POST">
+            <input type="hidden" id="recipient-id" name="recipient-id">
+            <div class="modal-body">
+              {% include 'producto/fragment/_form_producto.html'%}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" id="saveSubmitModal" class="btn btn-outline-dark">Guardar</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>

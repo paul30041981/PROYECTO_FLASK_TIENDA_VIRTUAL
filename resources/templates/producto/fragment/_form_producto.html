@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="mb-2 col-3">
+    <strong>{{ form.name.label(class="form-label") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.name(class="form-control border border-dark") }}
+  </div>
+  <div class="mb-2 col-3">
+    <strong>{{ form.category_id.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    <select class="form-control border border-dark" name="category_id" id="category_id">
+      {% for cat in categories %}
+          <option 
+              value={{ cat[0] }}
+              >
+              {{ cat[1] }}
+          </option>
+      {% endfor %}
+  </select>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="mb-2 col-3">
+    <strong>{{ form.price.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.price(class="form-control border border-dark", type="number", min="0.00", step="0.01" ) }}
+  </div>
+  <div class="mb-2 col-3">
+    <strong>{{ form.medida.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.medida(class="form-control border border-dark") }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="mb-2 col-3">
+    <strong>{{ form.stock.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.stock(class="form-control border border-dark", type="number", min="0", step="1") }}
+  </div> 
+  <div class="mb-2 col-3">
+    <strong>{{ form.perecerero.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.perecerero(class="form-check-input") }}
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="mb-2 col-3">
+    <strong>{{ form.fecha_vencimiento.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.fecha_vencimiento(class="form-control border border-dark") }}
+  </div> 
+  <div class="mb-2 col-3">
+    <strong>{{ form.estado.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-3">
+    {{ form.estado(class="form-control border border-dark") }}
+  </div> 
+</div>
+
+<div class="row">
+  <div class="mb-2 col-3">
+    <strong>{{ form.descripcion.label(class="form-label font-weight-bold") }}</strong>
+  </div>
+  <div class="mb-2 col-9">
+    {{ form.descripcion(class="form-control border border-dark") }}
+  </div> 
+</div>

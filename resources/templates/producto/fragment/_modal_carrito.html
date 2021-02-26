@@ -1,0 +1,20 @@
+    <!-- Modal Carrito-->
+    <div class="modal fade" style="padding-top: 40px;"  id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header text-white bg-dark">
+            <h5 class="modal-title" id="carritoModalLabel">Agregar Producto al Carro de Compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="carritoForm" action="#" method="GET">
+            <div class="modal-body">
+              {% include 'producto/fragment/_form_carrito.html'%}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" id="saveSubmitModalCarrito" class="btn btn-outline-dark">Agregar</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>

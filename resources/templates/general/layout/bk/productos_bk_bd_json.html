@@ -1,0 +1,12 @@
+{% extends "producto/layout.html" %}
+
+{% block body %}
+  <section>
+   <h3 class="post-title">Productos</h3>
+   <ul>
+    {% for key, product in productos.items() %}
+      <li><a href="{{ url_for('detalle', id=key) }}">{{product['name']}}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
