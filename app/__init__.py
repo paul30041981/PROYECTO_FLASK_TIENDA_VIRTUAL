@@ -32,5 +32,5 @@ from app.fauth import fauthRouter #ñpgueo con libreria
 from app.home import homeRouter #ñpgueo con libreria
 
 
-# if __name__ == '__main__':
-#   app.run()
+if __name__ == '__main__':
+  app.run()
